@@ -1,4 +1,3 @@
-import * as express from "express";
 import * as pgPromise from "pg-promise";
 import * as Promise from "bluebird";
 
