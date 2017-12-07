@@ -11,7 +11,7 @@ import {
 const router: RequestHandler = (req, res, next) => {
 
   knex("User").select().limit(10)
-    .map( (row: <T>(arg: T) => T) =>{
+    .map((row: <T>(arg: T) => T) =>{
       return row.name;
     })
     .then(data => res.status(200).json({data}))

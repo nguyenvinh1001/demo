@@ -13,6 +13,10 @@ import {showKnex} from "./queryKnex/select";
 import {addKnex} from "./queryKnex/insert";
 import { deleteKnex } from "./queryKnex/delete";
 
+// sequelize
+import { showSe } from "./sequelize/selectSe";
+import { insertSe } from "./sequelize/insertSe";
+
 const app = express();
 const port = process.env.PORT || 3000
 
@@ -30,6 +34,10 @@ app.get("/knex/show", showKnex);
 app.post("/knex/insert", addKnex);
 app.post("/knex/delete/:id", deleteKnex);
 
+
+// quert with sequelize
+app.get("/sequelize/show", showSe);
+app.post("/sequelize/insert", insertSe)
 
 app.listen(port, () => console.log(`Go ${port}`));
 
